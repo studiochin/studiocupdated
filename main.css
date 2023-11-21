@@ -6,7 +6,7 @@ h1,h2,h3,h4 {
 
 h1 {
     font-size: 6vw;
-    letter-spacing: -0.5rem;
+    letter-spacing: -0.60vw;
     margin: 4px;
     line-height: 0.8;
     font-weight: 500;
@@ -25,11 +25,12 @@ h2 {
 
 .span {
     font-size: 10px;
-    font-weight: bold;
 }
 .span__heading {
     display: block;
     margin-bottom: 12px;
+    font-weight: bold;
+
 }
 
 p,span,label,a {
@@ -39,8 +40,8 @@ p,span,label,a {
 }
 
 .header {
-    height: 45px;
-    border-bottom: 1px solid #000;
+    height: 40px;
+    border-bottom: 1px solid #c8c8c8;
 }
 
 .home__hero {
@@ -63,8 +64,11 @@ p,span,label,a {
     text-decoration: none;
     border: 1px solid #C1C1C1;
     line-height: 2;
-    font-weight: 500;
-
+    font-weight: bold;
+    transition: .2s all ease-in;
+}
+.btn:hover {
+    border-color: #000;
 }
 .btn.btn--default {
 
@@ -116,6 +120,8 @@ p,span,label,a {
     .marquee__group p {
         font-size: 8px;
         letter-spacing: 1px;
+        font-weight: bold;
+
     }
     
     @media (prefers-reduced-motion: reduce) {
@@ -147,6 +153,8 @@ p,span,label,a {
 .showcase__section {
     display: flex;
     min-height: 780px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 80px;
 }
 .showcase {
     width: 50%;
