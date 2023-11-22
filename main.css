@@ -42,17 +42,30 @@ p,span,label,a {
 .header {
     height: 36px;
     border-bottom: 1px solid #c8c8c8;
+    display: flex;
+    justify-content: space-between;
 }
 
 .home__hero {
     max-height: 780px;
-    height: 780px;
+    height: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 .home__hero__text-card {
     max-width: 500px;
     padding: 8px;
 }
 
+.home__hero--title {
+    /* grid-area: 2 / 1 / 2 / span 4;
+    grid-area: 1 / span 8;
+    grid-area: 4 / 1/ 4/ span 4;
+    align-self: self-end;
+    grid-area: 3 / 5;
+    text-align: -webkit-center; */
+}
 
 .btn {
     display: inline-block;
@@ -152,7 +165,7 @@ p,span,label,a {
 
 .showcase__section {
     display: flex;
-    min-height: 780px;
+    min-height: 600px;
     border-bottom: 1px solid #000;
     margin-bottom: 80px;
 }
