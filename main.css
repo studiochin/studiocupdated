@@ -14,7 +14,7 @@ h1 {
 
 h2 {
     font-size: 3vw;
-    letter-spacing: -0.3rem;
+    letter-spacing: -0.26vw;
     margin: 4px;
     line-height: 0.8;
     font-weight: 500;
@@ -46,7 +46,11 @@ p,span,label,a {
 p {
     font-family: 'work sans';
 }
-
+.pill__group {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+}
 .pill {
     width: 48px;
     height: 12px;
@@ -114,7 +118,7 @@ p {
     grid-area: 3 / 7 / span 1 / span 3;
     margin: 0;
     align-self: center;
-    color: #7379FF;
+    color: #1a23e4;
     text-align: -webkit-center;}
 
 .btn {
