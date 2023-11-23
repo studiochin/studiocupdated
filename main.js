@@ -90,7 +90,7 @@ class SmoothScroll {
     this.setStyles();
     this.setHeight();
     this.addEvents();
-
+    console.log("scrolling");
     this.requestAnimationFrame();
   }
 

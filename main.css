@@ -19,6 +19,10 @@ h2 {
     line-height: 0.8;
     font-weight: 500;
 }
+
+h3 {
+    font-size: 32px;
+}
 .showcase__title {
     margin-top: 40px;
 }
@@ -39,6 +43,29 @@ p,span,label,a {
     line-height: 15.75px;
 }
 
+p {
+    font-family: 'work sans';
+}
+
+.pill {
+    width: 48px;
+    height: 12px;
+    text-transform: uppercase;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+.pill.pill--default {
+    border-color: #7379FF;
+}
+.pill span {
+    font-size: 8px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    line-height: 1.5;
+    text-align: center;
+}
+
 .header {
     height: 36px;
     border-bottom: 1px solid #c8c8c8;
@@ -47,18 +74,31 @@ p,span,label,a {
 }
 
 .home__hero {
-    max-height: 780px;
-    height: 700px;
+    max-height: 650px;
+    height: 650px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 .home__hero__text-card {
     max-width: 500px;
     padding: 8px;
+    grid-area: 2 / 2 / span 1 / span 4
 }
-
-.home__hero--title {
+.home__hero__text-card--secondary {
+    max-width: 500px;
+    padding: 8px;
+    grid-area: 5 / 1 / span 1 / span 5;
+    align-self: end;
+    padding-bottom: 0;
+}
+.home__hero__quick-nav {
+    grid-area: 3 / 5 / span 1 /span 1;
+    text-align: -webkit-center;
+    align-self: center;
+}
+.home__hero__title {
+    grid-area: 1 / 1 / span 1 / span 5;
     /* grid-area: 2 / 1 / 2 / span 4;
     grid-area: 1 / span 8;
     grid-area: 4 / 1/ 4/ span 4;
@@ -66,6 +106,16 @@ p,span,label,a {
     grid-area: 3 / 5;
     text-align: -webkit-center; */
 }
+.sample__rect {
+    grid-area: 2/ 6/ span 4 / span 3;
+}
+
+.home__hero__title--secondary {
+    grid-area: 3 / 7 / span 1 / span 3;
+    margin: 0;
+    align-self: center;
+    color: #7379FF;
+    text-align: -webkit-center;}
 
 .btn {
     display: inline-block;
