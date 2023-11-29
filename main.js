@@ -1,6 +1,6 @@
 const math = {
-  lerp: (a, b, n) => {
-    return (1 - n) * a + n * b;
+  lerp: (v0, v1, t) => {
+    return v0 * (1 - t) + v1 * t;
   },
   norm: (value, min, max) => {
     return (value - min) / (max - min);
@@ -11,6 +11,8 @@ const config = {
   height: window.innerHeight,
   width: window.innerWidth,
 };
+
+let isDone = false;
 
 class SmoothScroll {
   constructor() {
@@ -90,8 +92,8 @@ class SmoothScroll {
     this.setStyles();
     this.setHeight();
     this.addEvents();
-    console.log("scrolling");
     this.requestAnimationFrame();
+    console.log("done scroll");
   }
 
   off() {
@@ -137,5 +139,66 @@ class SmoothScroll {
     this.on();
   }
 }
-// auto run when script is loaded
+class Parallax {
+  constructor() {
+    this.bindMethods();
+    this.initParallaxControls();
+    this.initEvents();
+    this.requestAnimationFrame();
+    this.initialLerpVal = math.lerp(window.scrollY, window.scrollY * 0.2, 2);
+
+    isDone = true;
+  }
+
+  initParallaxControls() {
+    this.parallaxControls = document.querySelectorAll(".parallax");
+  }
+
+  bindMethods() {
+    ["scroll", "run"].forEach((fn) => (this[fn] = this[fn].bind(this)));
+  }
+
+  initEvents() {
+    window.addEventListener("scroll", this.scroll, { passive: true });
+  }
+
+  requestAnimationFrame() {
+    this.rAF = requestAnimationFrame(this.run);
+  }
+
+  run() {
+    let scrollPosition = this.scrollPosition;
+    let initialLerpVal = this.initialLerpVal;
+    this.parallaxControls.forEach((el, ind) => {
+      if (ind == 1) {
+        let lerpVal =
+          math.lerp(scrollPosition, scrollPosition * 0.2, 2) - initialLerpVal;
+        el.style.backgroundPositionY = `${lerpVal}px`;
+      } else {
+        el.style.backgroundPositionY = `${math.lerp(
+          scrollPosition,
+          scrollPosition * 0.8,
+          2
+        )}px`;
+      }
+    });
+    this.requestAnimationFrame();
+  }
+
+  scroll() {
+    this.scrollPosition = window.scrollY;
+  }
+}
+new Parallax();
 new SmoothScroll();
+
+if (isDone) {
+  console.log("heii");
+  setInterval(async () => {
+    document.querySelector(".loader-overlay").classList.add("opacity-0");
+  }, 200);
+  setInterval(async () => {
+    document.querySelector(".loader-overlay").classList.add("d-none");
+  }, 1000);
+  // remove the loader
+}
