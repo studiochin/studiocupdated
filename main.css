@@ -37,6 +37,10 @@ h3 {
 
 }
 
+.span__heading--underline {
+    text-decoration: underline;
+}
+
 p,span,label,a {
     font-family: 'Inter', sans-serif;
     font-size: 12px;
@@ -49,6 +53,8 @@ p {
 .pill__group {
     display: flex;
     margin: 8px 0;
+    gap: 4px;
+    flex-flow: wrap;
 }
 .pill__group--space-between {
     justify-content: space-between;
@@ -239,19 +245,29 @@ p {
     display: flex;
     min-height: 600px;
     border-bottom: 1px solid #000;
-    margin-bottom: 80px;
+    height: auto;
+    position: relative;
 }
 .showcase {
     width: 50%;
+    position: relative;
+    height: auto;
 }
 .showcase--1 {
     border-right: 1px solid #000;
+    position: relative;
+    height: auto;
 }
 .showcase__works {
     display: flex;
     padding: 8px;
     gap: 16px;
     margin-top: 40px;
+    flex-flow: wrap;
+    height: auto;
+}
+.showcase__works .text-column {
+    width: 30%;
 }
 .text-column {
     text-align: justify;
