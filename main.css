@@ -6,7 +6,7 @@ h1,h2,h3,h4 {
 
 h1 {
     font-size: 6vw;
-    letter-spacing: -0.60vw;
+    letter-spacing: -0.33vw;
     margin: 4px;
     line-height: 0.8;
     font-weight: 500;
@@ -117,11 +117,10 @@ p {
     background-attachment: fixed;
     background-position: center;
     align-self: end;
-    overflow-x: hidden;
-    overflow-y: scroll;
     perspective: 1px;
     perspective-origin: 0 0;
     border-radius: 2px;
+    overflow: hidden;
 }
 .sample__rect {
     object-fit: contain;
@@ -257,6 +256,7 @@ p {
     border-right: 1px solid #000;
     position: relative;
     height: auto;
+    padding-bottom: 40px;
 }
 .showcase__works {
     display: flex;
@@ -267,7 +267,7 @@ p {
     height: auto;
 }
 .showcase__works .text-column {
-    width: 30%;
+    width: 31%;
 }
 .text-column {
     text-align: justify;
@@ -275,15 +275,16 @@ p {
 .loader-overlay {
     height: 100vh;
     width: 100%;
-    background-color: rgb(255, 176, 126);
+    background-color: rgb(255, 222, 201);
     position: absolute;
     z-index: 10;
-    transition: all .8s ease-out;
+    transition: all .2s ease-out;
 
 }
 .d-none {
     display: none;
 }
 .opacity-0 {
+    transform: translateY(-100vh);
     opacity: 0;
 }

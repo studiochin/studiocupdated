@@ -93,7 +93,6 @@ class SmoothScroll {
     this.setHeight();
     this.addEvents();
     this.requestAnimationFrame();
-    console.log("done scroll");
   }
 
   off() {
@@ -170,9 +169,8 @@ class Parallax {
     let scrollPosition = this.scrollPosition;
     let initialLerpVal = this.initialLerpVal;
     this.parallaxControls.forEach((el, ind) => {
-      if (ind == 1) {
-        let lerpVal =
-          math.lerp(scrollPosition, scrollPosition * 0.2, 2) - initialLerpVal;
+      if (ind % 2 != 0) {
+        let lerpVal = math.lerp(scrollPosition, scrollPosition * 0.2, 2) - initialLerpVal;
         el.style.backgroundPositionY = `${lerpVal}px`;
       } else {
         el.style.backgroundPositionY = `${math.lerp(
@@ -193,12 +191,11 @@ new Parallax();
 new SmoothScroll();
 
 if (isDone) {
-  console.log("heii");
   setInterval(async () => {
     document.querySelector(".loader-overlay").classList.add("opacity-0");
   }, 200);
   setInterval(async () => {
     document.querySelector(".loader-overlay").classList.add("d-none");
-  }, 1000);
+  }, 800);
   // remove the loader
 }
