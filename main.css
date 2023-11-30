@@ -60,7 +60,9 @@ p {
     justify-content: space-between;
 }
 .pill {
-    width: 48px;
+    width: auto;
+    min-width: 36px;
+    padding: 0 6px;
     height: 12px;
     text-transform: uppercase;
     border: 1px solid grey;
