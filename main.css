@@ -69,6 +69,9 @@ p {
 .pill.pill--default {
     border-color: #7379FF;
 }
+.pill__group--a-right {
+    justify-content: flex-end;
+}
 .pill span {
     font-size: 8px;
     margin: 0;
@@ -95,7 +98,8 @@ p {
 .home__hero__text-card {
     max-width: 500px;
     padding: 8px;
-    grid-area: 2 / 2 / span 1 / span 4
+    grid-area: 2 / 1 / span 1 / span 4;
+    margin-left: 24px;
 }
 .home__hero__text-card--secondary {
     max-width: 500px;
@@ -110,12 +114,14 @@ p {
     align-self: center;
 }
 .home__hero__title {
+    z-index: 3;
     grid-area: 1 / 1 / span 1 / span 5;
 
 }
 .sample__rect, .sample__rect-2 {
-    background-attachment: fixed;
-    background-position: center;
+    /* background-attachment: fixed;
+    background-position: top; */
+    background-repeat: no-repeat;
     align-self: end;
     perspective: 1px;
     perspective-origin: 0 0;
@@ -123,10 +129,9 @@ p {
     overflow: hidden;
 }
 .sample__rect {
-    object-fit: contain;
     width: 440px;
     height: 440px;
-    background-image: url('./assets/recty.png');
+    background-image: url('./assets/ssff.png');
     grid-area: 1/ 6/ span 4 / span 3;
 }
 .sample__rect-2 {
@@ -136,13 +141,23 @@ p {
     grid-area: 2/ 4/ span 3 / span 3;
 }
 
+.rect--3 {
+    background-attachment: fixed;
+    background-image: url('./assets/outlineflower.png');
+    grid-area: 2/ 6/ span 4 / span 3;
+    opacity: .33;
+    mix-blend-mode: overlay;
+}
+
 .home__hero__title--secondary {
     grid-area: 3 / 7 / span 1 / span 3;
     margin: 0;
     align-self: center;
     color: #1a23e4;
     z-index: 2;
-    text-align: -webkit-center;}
+    text-align: -webkit-center;
+    mix-blend-mode: luminosity;
+}
 
 .btn {
     display: inline-block;
@@ -260,7 +275,7 @@ p {
 }
 .showcase__works {
     display: flex;
-    padding: 8px;
+    padding: 4px 16px;
     gap: 16px;
     margin-top: 40px;
     flex-flow: wrap;
@@ -275,7 +290,7 @@ p {
 .loader-overlay {
     height: 100vh;
     width: 100%;
-    background-color: rgb(255, 222, 201);
+    background-color: #c8c9e1;
     position: absolute;
     z-index: 10;
     transition: all .2s ease-out;
@@ -285,6 +300,5 @@ p {
     display: none;
 }
 .opacity-0 {
-    transform: translateY(-100vh);
     opacity: 0;
 }

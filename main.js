@@ -144,7 +144,7 @@ class Parallax {
     this.initParallaxControls();
     this.initEvents();
     this.requestAnimationFrame();
-    this.initialLerpVal = math.lerp(window.scrollY, window.scrollY * 0.2, 2);
+    // this.initialLerpVal = math.lerp(window.scrollY, window.scrollY * 0.2, 2);
 
     isDone = true;
   }
@@ -169,10 +169,15 @@ class Parallax {
     let scrollPosition = this.scrollPosition;
     let initialLerpVal = this.initialLerpVal;
     this.parallaxControls.forEach((el, ind) => {
-      if (ind % 2 != 0) {
-        let lerpVal = math.lerp(scrollPosition, scrollPosition * 0.2, 2) - initialLerpVal;
+      if (ind == 0) {
+        let lerpVal = math.lerp(scrollPosition, scrollPosition * .25, 1);
         el.style.backgroundPositionY = `${lerpVal}px`;
-      } else {
+      } 
+      else if (ind == 2) {
+        let lerpVal = math.lerp(scrollPosition, scrollPosition * .25, 2);
+        el.style.backgroundPositionY = `${lerpVal}px`;
+      }
+      else {
         el.style.backgroundPositionY = `${math.lerp(
           scrollPosition,
           scrollPosition * 0.8,
@@ -187,15 +192,18 @@ class Parallax {
     this.scrollPosition = window.scrollY;
   }
 }
-new Parallax();
-new SmoothScroll();
 
-if (isDone) {
+new Promise((resolve) => {
+  new Parallax();
+  new SmoothScroll();
+  resolve();
+}).then(() => {
+  console.log("resolved");
   setInterval(async () => {
     document.querySelector(".loader-overlay").classList.add("opacity-0");
   }, 200);
-  setInterval(async () => {
+    setInterval(async () => {
     document.querySelector(".loader-overlay").classList.add("d-none");
   }, 800);
-  // remove the loader
-}
+
+})
