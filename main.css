@@ -141,12 +141,25 @@ p {
     grid-area: 2/ 4/ span 3 / span 3;
 }
 
+.sample__rect-4 {
+    width: 110px;
+    height: 110px;
+    background-image: url('./assets/rectgroup.png');
+    background-size: contain;
+    grid-area: 3/ 1/ span 2 / span 2;
+    align-self: end;
+    border-radius: 2px;
+    opacity: .5;
+    margin: 24px;
+}
+
 .rect--3 {
     background-attachment: fixed;
     background-image: url('./assets/outlineflower.png');
-    grid-area: 2/ 6/ span 4 / span 3;
+    grid-area: -5/ 7/ span 4 / span 3;
     opacity: .33;
     mix-blend-mode: overlay;
+    background-size: contain;
 }
 
 .home__hero__title--secondary {
