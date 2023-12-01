@@ -291,6 +291,20 @@ p {
     position: relative;
     height: auto;
 }
+.showcase__content-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+.showcase__content-container > div {
+    border: 1px solid blue;
+    height: 350px;
+    width: 50%;
+}
+.showcase__title--inner {
+    display: flex;
+    justify-content: space-between;
+}
 .showcase.showcase--1 {
     width: 65%;
     border-right: 1px solid #000;
@@ -336,7 +350,7 @@ p {
     opacity: 0;
 }
 footer {
-    height: 80px;
+    height: 20px;
     background-image: url('./assets/footerbg.png');
     background-repeat: repeat;
 }
