@@ -82,7 +82,10 @@ p {
     line-height: 1.5;
     text-align: center;
 }
+.pill.pill--red {
+    border-color: rgb(252, 103, 103);
 
+}
 .pill.pill--orange {
     border-color: #ff9a52;
 }
@@ -144,7 +147,10 @@ p {
     width: 440px;
     height: 440px;
     background-image: url('./assets/ssff.png');
+}
+.home .sample__rect {
     grid-area: 1/ 6/ span 4 / span 3;
+
 }
 .sample__rect-2 {
     width: 220px;
@@ -295,16 +301,52 @@ p {
     display: flex;
     justify-content: space-between;
     gap: 8px;
+    border-top:0;
 }
 .showcase__content-container > div {
-    border: 1px solid blue;
-    height: 350px;
-    width: 50%;
+    min-height: 300px;
+    height: 300px;
+    padding: 0;
+}
+.showcase__content-container  p {
+    margin-top: 0;
+}
+.showcase__content-container > div.showcase__content--description {
+    padding: 4px;
+    width: 40%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    text-align: justify;
+}
+.showcase__content--description .btn {
+    margin-bottom: 4px;
+    width: 100%;
+ }
+ .showcase__content--description .span__heading {
+    margin-bottom: 0;
+    text-decoration: underline;
+ }
+.showcase__content--image {
+    width: 60%;
+}
+.showcase__content--image .sample__rect {
+    width: 100%;
+    border-radius: 0;
 }
 .showcase__title--inner {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4px;
 }
+.showcase__title--inner h4 {
+    margin-bottom: 0;
+}
+.showcase__title--inner .pill__group {
+    margin: 0;
+}
+
 .showcase.showcase--1 {
     width: 65%;
     border-right: 1px solid #000;
@@ -321,6 +363,13 @@ p {
     gap: 10px;
     margin-top: 40px;
     height: auto;
+}
+.showcase__content--image {
+    overflow: hidden;
+}
+.showcase--project {
+    margin-top:24px;
+    padding: 16px;
 }
 .showcase__works .text-column {
 }
