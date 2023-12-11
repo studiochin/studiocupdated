@@ -409,3 +409,51 @@ footer {
     background-image: url('./assets/footerbg.png');
     background-repeat: repeat;
 }
+
+@media screen and (max-width: 990px) {
+    h2 {
+        font-size: 24px;
+    }
+    .sample__rect-2, .sample__rect-4 {
+        visibility: hidden;
+    }
+
+    .home__hero__title--secondary {
+        grid-area: 2 / 7 / span 3 / span 5;
+    }
+
+    .home .sample__rect {
+        grid-area: 1/ 2/ span 4 / span 3;
+        z-index: -1;
+    }
+    .home__hero__quick-nav {
+        grid-area: 3 / 4 / span 1 /span 1;
+    }
+    .showcase__section {
+        display: block;
+    }
+    .showcase.showcase--1 {
+        border-right: 0;
+        width: 100%;
+    }
+    .showcase.showcase--2 {
+        width: 100%;
+    }
+    .showcase--project {
+        margin-top: 0;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .showcase__content-container > div.showcase__content--description {
+        width: 66%;
+    }
+    .showcase__content--image {
+        width: 33%;
+    }
+    .showcase__title {
+        margin-top: 8px;
+    }
+    .text-column {
+        margin-bottom: 32px;
+    }
+}
