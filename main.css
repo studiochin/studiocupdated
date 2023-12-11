@@ -50,6 +50,12 @@ p,span,label,a {
 p {
     font-family: 'work sans';
 }
+.clr--orange {
+    color: #ff9a52;
+}
+.clr--blue {
+    color: #1a23e4;
+}
 .pill__group {
     display: flex;
     margin: 8px 0;

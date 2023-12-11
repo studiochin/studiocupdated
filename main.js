@@ -170,14 +170,12 @@ class Parallax {
     let initialLerpVal = this.initialLerpVal;
     this.parallaxControls.forEach((el, ind) => {
       if (ind == 0) {
-        let lerpVal = math.lerp(scrollPosition, scrollPosition * .25, 1);
+        let lerpVal = math.lerp(scrollPosition, scrollPosition * 0.25, 1);
         el.style.backgroundPositionY = `${lerpVal}px`;
-      } 
-      else if (ind == 2) {
-        let lerpVal = math.lerp(scrollPosition, scrollPosition * .25, 2);
+      } else if (ind == 2) {
+        let lerpVal = math.lerp(scrollPosition, scrollPosition * 0.25, 2);
         el.style.backgroundPositionY = `${lerpVal}px`;
-      }
-      else {
+      } else {
         el.style.backgroundPositionY = `${math.lerp(
           scrollPosition,
           scrollPosition * 0.8,
@@ -198,12 +196,10 @@ new Promise((resolve) => {
   new SmoothScroll();
   resolve();
 }).then(() => {
-  console.log("resolved");
   setInterval(async () => {
     document.querySelector(".loader-overlay").classList.add("opacity-0");
   }, 200);
-    setInterval(async () => {
+  setInterval(async () => {
     document.querySelector(".loader-overlay").classList.add("d-none");
   }, 800);
-
-})
+});
