@@ -379,6 +379,24 @@ p {
 }
 .showcase__works .text-column {
 }
+
+.sample__rect.showcase-content-img {
+    background-image: url('./assets/ffss.png');
+    background-size: contain;
+    opacity: .8;
+}
+.sample__rect.showcase-content-img-2 {
+    background-image: url('./assets/code.png');
+    background-size: contain;
+    opacity: .8;
+
+}
+.sample__rect.showcase-content-img-3 {
+    background-image: url('./assets/wanikanibot.png');
+    background-size: contain;
+    opacity: .8;
+
+}
 .text-column {
     text-align: justify;
     margin-bottom: 64px;
@@ -455,5 +473,8 @@ footer {
     }
     .text-column {
         margin-bottom: 32px;
+    }
+    .sample__rect.showcase-content-img,.sample__rect.showcase-content-img-2,.sample__rect.showcase-content-img-3 {
+        background-size: cover;
     }
 }

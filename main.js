@@ -193,7 +193,10 @@ class Parallax {
 
 new Promise((resolve) => {
   new Parallax();
-  new SmoothScroll();
+  if (window.innerWidth > 990) {
+    new SmoothScroll();
+  }
+
   resolve();
 }).then(() => {
   setInterval(async () => {
